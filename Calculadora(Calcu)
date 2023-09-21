@@ -1,0 +1,129 @@
+using System.Diagnostics.Eventing.Reader;
+
+namespace calc
+{
+    public partial class Form1 : Form
+    {
+        double Numero1 = 0, Numero2 = 0;
+        char Operador;
+
+        public Form1()
+        {
+            InitializeComponent();
+        }
+        private void agregarNumero(object sender, EventArgs e)
+
+        {
+            var boton = ((Button)sender);
+            if (txtResultado.Text == "0")
+                txtResultado.Text = "";
+
+            txtResultado.Text += boton.Text;
+            // este codigo es para agregar numeros\\
+
+        }
+        private void btnResultado_Click(object sender, EventArgs e)
+        {
+            Numero2 = Convert.ToDouble(txtResultado.Text);
+
+
+            if (Operador == '+')
+            {
+                txtResultado.Text = (Numero1 + Numero2).ToString();
+                Numero1 = Convert.ToDouble(txtResultado.Text);
+
+            }
+            else if (Operador == '-')
+            {
+                txtResultado.Text = (Numero1 - Numero2).ToString();
+                Numero1 = Convert.ToDouble(txtResultado.Text);
+            }
+
+            else if (Operador == 'X')
+            {
+                txtResultado.Text = (Numero1 * Numero2).ToString();
+                Numero1 = Convert.ToDouble(txtResultado.Text);
+            }
+
+            else if (Operador == '/')
+            {
+                if (txtResultado.Text != "0")
+                {
+                    txtResultado.Text = (Numero1 / Numero2).ToString();
+                    Numero1 = Convert.ToDouble(txtResultado.Text);
+                }
+                else 
+                {
+                    MessageBox.Show("No se puede dividir por cero!");
+
+                }
+            }
+
+        }
+        //Este codigo es para que de resultado cada operacion, pero no funciona y no se por que >:(\\
+        // Excepto elevado a 2 y raiz cuadrada esos si funciona\\
+
+        private void btnQuitar_Click(object sender, EventArgs e)
+        {
+            if (txtResultado.Text.Length > 1)
+            {
+                txtResultado.Text = txtResultado.Text.Substring(0, txtResultado.Text.Length - 1);
+            }
+            else
+            {
+                txtResultado.Text = "0";
+            }
+        }
+        // Este es para el de quitar, pero no funciona\\
+
+        private void btnSigno_Click(object sender, EventArgs e) 
+        {
+            Numero1 = Convert.ToDouble(txtResultado.Text);
+            Numero1 *= -1; 
+            txtResultado.Text = Numero1.ToString();
+        }
+        //Este es para cambiar de signo pero tampoco funciona\\
+
+
+        private void btnBorrarTodo_Click(object sender, EventArgs e)
+        {
+            Numero1 = 0;
+            Numero1 = 0;
+            Operador = '\0';
+            txtResultado.Text = "0";
+        }
+        // Este es para borrar toda la operacion pero tampoco funciona\\
+
+        private void btnBorrar_Click(object sender, EventArgs e)
+        {
+            txtResultado.Text = "0";
+        }
+        //Este es para borrar parte de la operacion, pero tampoco funciona "-"\\
+        
+        private void clickOperador(object sender, EventArgs e)
+        {
+            var boton = ((Button)sender);
+
+            Numero1 = Convert.ToDouble(txtResultado.Text);
+            Operador = Convert.ToChar(boton.Tag);
+            if (Operador == '²')
+            {
+                Numero1 = Math.Pow(Numero1, 2);
+                txtResultado.Text = Numero1.ToString();
+            }
+            else if (Operador == '√')
+            {
+                Numero1 = Math.Sqrt(Numero1);
+                txtResultado.Text = Numero1.ToString();
+            }
+            else
+            {
+                txtResultado.Text = "0";
+            }
+            //Estos son los operadores para dar click, pero funcionan en parte :-]\\
+
+        }
+
+    }
+}
+// No funciona lo de resultado y no tampoco funciona lo de Eliminar y eh tratado tanto de solucionarlo que estoy entregando esta tarea tarde\\
