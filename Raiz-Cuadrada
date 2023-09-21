@@ -33,7 +33,7 @@ class Program
             guess = (guess + number / guess) / 2.0;
         }
 
-        // Devuelve la suposición actual como la raíz cuadrada del número
+        // Devuelve la suposicion actual como la raiz cuadrada del numero
         return guess;
     }
 }
