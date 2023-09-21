@@ -1,0 +1,39 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        // Solicita al usuario que introduzca un número
+        Console.Write("Introduce un número: ");
+        double number = Convert.ToDouble(Console.ReadLine());
+
+        // Calcula la raíz cuadrada del número
+        double result = Sqrt(number);
+
+        // Muestra el resultado en la consola
+        Console.WriteLine("La raíz cuadrada de " + number + " es " + result);
+    }
+
+    static double Sqrt(double number, double epsilon = 0.00001)
+    {
+        // Comprueba si el número es negativo
+        if (number < 0)
+        {
+            throw new ArgumentException("El número debe ser no negativo");
+        }
+
+        // Estimación inicial de la raíz cuadrada
+        double guess = number / 2.0;
+
+        // Mientras el cuadrado de la suposición actual difiere del número original en más que epsilon
+        while (Math.Abs(guess * guess - number) >= epsilon)
+        {
+            // Realiza una nueva suposición utilizando el método de Newton
+            guess = (guess + number / guess) / 2.0;
+        }
+
+        // Devuelve la suposición actual como la raíz cuadrada del número
+        return guess;
+    }
+}
