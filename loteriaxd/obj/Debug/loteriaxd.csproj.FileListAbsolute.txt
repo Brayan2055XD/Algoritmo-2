@@ -1,0 +1,10 @@
+C:\Users\braya\Pictures\documentos de tareas 22\Fundamento de programacion 2\loteriaxd\loteriaxd\bin\Debug\loteriaxd.exe.config
+C:\Users\braya\Pictures\documentos de tareas 22\Fundamento de programacion 2\loteriaxd\loteriaxd\bin\Debug\loteriaxd.exe
+C:\Users\braya\Pictures\documentos de tareas 22\Fundamento de programacion 2\loteriaxd\loteriaxd\bin\Debug\loteriaxd.pdb
+C:\Users\braya\Pictures\documentos de tareas 22\Fundamento de programacion 2\loteriaxd\loteriaxd\obj\Debug\loteriaxd.csproj.AssemblyReference.cache
+C:\Users\braya\Pictures\documentos de tareas 22\Fundamento de programacion 2\loteriaxd\loteriaxd\obj\Debug\loteriaxd.Properties.Resources.resources
+C:\Users\braya\Pictures\documentos de tareas 22\Fundamento de programacion 2\loteriaxd\loteriaxd\obj\Debug\loteriaxd.csproj.GenerateResource.cache
+C:\Users\braya\Pictures\documentos de tareas 22\Fundamento de programacion 2\loteriaxd\loteriaxd\obj\Debug\loteriaxd.csproj.CoreCompileInputs.cache
+C:\Users\braya\Pictures\documentos de tareas 22\Fundamento de programacion 2\loteriaxd\loteriaxd\obj\Debug\loteriaxd.exe
+C:\Users\braya\Pictures\documentos de tareas 22\Fundamento de programacion 2\loteriaxd\loteriaxd\obj\Debug\loteriaxd.pdb
+C:\Users\braya\Pictures\documentos de tareas 22\Fundamento de programacion 2\loteriaxd\loteriaxd\obj\Debug\LoteriaApp.Form1.resources
