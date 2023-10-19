@@ -1,0 +1,14 @@
+C:\Users\braya\Pictures\documentos de tareas 22\Fundamento de programacion 2\El XML\El XML\bin\Debug\net6.0\El XML.exe
+C:\Users\braya\Pictures\documentos de tareas 22\Fundamento de programacion 2\El XML\El XML\bin\Debug\net6.0\El XML.deps.json
+C:\Users\braya\Pictures\documentos de tareas 22\Fundamento de programacion 2\El XML\El XML\bin\Debug\net6.0\El XML.runtimeconfig.json
+C:\Users\braya\Pictures\documentos de tareas 22\Fundamento de programacion 2\El XML\El XML\bin\Debug\net6.0\El XML.dll
+C:\Users\braya\Pictures\documentos de tareas 22\Fundamento de programacion 2\El XML\El XML\bin\Debug\net6.0\El XML.pdb
+C:\Users\braya\Pictures\documentos de tareas 22\Fundamento de programacion 2\El XML\El XML\obj\Debug\net6.0\El XML.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\braya\Pictures\documentos de tareas 22\Fundamento de programacion 2\El XML\El XML\obj\Debug\net6.0\El XML.AssemblyInfoInputs.cache
+C:\Users\braya\Pictures\documentos de tareas 22\Fundamento de programacion 2\El XML\El XML\obj\Debug\net6.0\El XML.AssemblyInfo.cs
+C:\Users\braya\Pictures\documentos de tareas 22\Fundamento de programacion 2\El XML\El XML\obj\Debug\net6.0\El XML.csproj.CoreCompileInputs.cache
+C:\Users\braya\Pictures\documentos de tareas 22\Fundamento de programacion 2\El XML\El XML\obj\Debug\net6.0\El XML.dll
+C:\Users\braya\Pictures\documentos de tareas 22\Fundamento de programacion 2\El XML\El XML\obj\Debug\net6.0\refint\El XML.dll
+C:\Users\braya\Pictures\documentos de tareas 22\Fundamento de programacion 2\El XML\El XML\obj\Debug\net6.0\El XML.pdb
+C:\Users\braya\Pictures\documentos de tareas 22\Fundamento de programacion 2\El XML\El XML\obj\Debug\net6.0\El XML.genruntimeconfig.cache
+C:\Users\braya\Pictures\documentos de tareas 22\Fundamento de programacion 2\El XML\El XML\obj\Debug\net6.0\ref\El XML.dll
