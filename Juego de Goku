@@ -1,0 +1,135 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using System.Media;
+using System.Collections;
+
+namespace gopu_pelota
+{
+    public partial class Form1 : Form
+    {
+        List<PictureBox> Lista = new List<PictureBox>();
+        int Velocidad = 1, ColorPong = 1;
+        Random ColorBalon = new Random();
+        SoundPlayer SoundPlayer = new SoundPlayer();
+        private object Sonido;
+
+        public Form1()
+        {
+            InitializeComponent();
+            IniciarJuego();
+        }
+        public void IniciarJuego() {
+            Velocidad = 1;
+            pictureBox1.Tag = 1;
+            this.KeyPreview = true;
+            lblPuntaje.Text = "0";
+            CrearPelota(Lista, this);
+            timer1.Start();
+            timer2.Start();
+            Sonido.Stream = Properties.Resources.blog;
+        }
+
+        private void CrearPelota(List<PictureBox> lista, Form1 form1)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            for (int i = 0; i < Lista.Count; i++)
+            {
+                int MovimientoY;
+                MovimientoY = Lista[i].Location.Y;
+                MovimientoY = MovimientoY + Velocidad;
+                Lista[i].Location = new Point(Lista[i].Location.X, MovimientoY);
+            } 
+            if (Lista.Count > 0)
+            {
+                if (Lista[(Lista.Count - 1)].Location.Y > 5)
+                    CrearPelota(Lista, this);
+            }
+
+        }
+
+        private void CambiarColorBarra(object sender, KeyPressEventArgs e)
+        {
+
+        }
+
+        private void CambiarColorBarra(object sender, EventArgs e)
+        {
+            if (e.keyChar == Convert.ToChar(Keys.Space))
+            {
+                ColorPong++;
+                if (ColorPong == 4) { ColorPong = 1; }
+                pictureBox1.Image = (Bitmap)Properties.Resources.ResourceManager.GetObject("pong" +  ColorPong);
+                pictureBox1.Tag = ColorPong;
+            }
+        }
+
+        private void timer2_Tick(object sender, EventArgs e)
+        {
+            for (int i = 0; i < Lista.Count; i++)
+            {
+                if (Lista[i].Bounds.IntersectsWith(pictureBox1.Bounds))
+                {
+                    if (Lista[i].Tag.ToString() == pictureBox1.Tag.ToString())
+                    {
+                        int puntos = Convert.ToInt32(lblPuntaje.Text); puntos++;
+                        if (puntos % 5==0) { Velocidad++; }
+                        lblPuntaje.Text = puntos.ToString();
+                        Sonido.Play();
+
+                    }
+                    else
+                    {
+                        LimpiarListas();
+                    }
+                    this.Controls.Remove(Lista[i]);
+                    Lista.RemoveAt(i);
+                }
+            }
+        }
+        public void LimpiarListas()
+        {
+            timer1.Stop();
+            timer2.Stop();
+            for (int i = 0;i < Lista.Count;i++)
+            {
+                this.Controls.Remove(Lista[i]);
+                Lista.RemoveAt(i);
+            }
+            Sonido.Stream = Properties.Resources.lost;
+            Sonido.Play();
+            MessageBox.Show("Perdiste :(");
+            IniciarJuego();
+        }
+
+        public void CrearPelota(List<PictureBox> listaPelota, Form Formulario, object ListaPelota)
+        {
+            PictureBox pb = new PictureBox();
+            pb.Location = new Point(135, -0);
+            int NumeroColor = ColorBalon.Next(1, 4);
+            pb.Image = (Bitmap)Properties.Resources.ResourceManager.GetObject("b" + (NumeroColor));
+            pb.Tag = NumeroColor;
+            pb.BackColor = Color.Transparent;
+            pb.SizeMode = PictureBoxSizeMode.AutoSize;
+            ListaPelota.add(pb);
+            Formulario.Controls.Add(pb);
+
+        }
+
+    }
+}
