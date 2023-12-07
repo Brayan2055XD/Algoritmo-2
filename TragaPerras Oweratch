@@ -1,0 +1,56 @@
+using System;
+using System.Collections.Generic;
+using System.Drawing;
+using System.Windows.Forms;
+
+namespace Traga_Perras
+{
+    public partial class Form1 : Form
+    {
+        List<PictureBox>
+            GrupoFichasUno = new List<PictureBox>(),
+            GrupoFichasDos = new List<PictureBox>(),
+            GrupoFichasTres = new List<PictureBox>();
+
+        int MovimientoY = 0, PosicionSiguiente, LongitudFicha = 100, posicionEjeX = 3;
+        bool Indicador1 = false, Indicador2 = false, Indicador3 = false;
+
+        String NombreFicha1 = "", NombreFicha2 = "", NombreFicha3 = "";
+
+        public Form1()
+        {
+            InitializeComponent();
+            timer1.Stop();
+            timer2.Stop();
+            timer3.Stop();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            CrearImagenes(GrupoFichasUno, panel1, "ana");
+            CrearImagenes(GrupoFichasDos, panel2, "lucio");
+            CrearImagenes(GrupoFichasTres, panel3, "mei");
+        }
+
+        // ... (el resto del código se mantiene igual)
+
+        public List<PictureBox> CrearImagenes(List<PictureBox> Lista, Panel panel, String NombreTag)
+        {
+            for (int i = 0; i < 9; i++)
+            {
+                PictureBox pb = new PictureBox();
+                pb.Image = (Bitmap)Properties.Resources.ResourceManager.GetObject(NombreTag.ToLower());
+                pb.Size = new Size(LongitudFicha, LongitudFicha);
+                pb.SizeMode = PictureBoxSizeMode.StretchImage;
+                pb.Name = String.Format("{0}{1}", NombreTag, i);
+                pb.Tag = String.Format("{0}_{1}", NombreTag, i);
+                pb.Location = new Point(posicionEjeX, i * LongitudFicha);
+                Lista.Add(pb);
+                panel.Controls.Add(pb);
+            }
+            return Lista;
+        }
+
+        // ... (el resto del código se mantiene igual)
+    }
+}
